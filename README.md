@@ -4,16 +4,16 @@
 
 1. [Author](#author)
 2. [Contents](#contents)
-	3. [`teprob.f`](#teprobf)
-	4. [`temain_mod.f`](#temainmodf)
-		5. [License](#license)
-		6. [Instructions for running the program](#instructions-for-running-the-program)
-	5. [`teprob.f`](#teprobf)
-		6. [Subroutines](#subroutines)
-		6. [Manipulated Variables](#manipulated-variables)
-		6. [Continuous Process Measurements](#continuous-process-measurements)
-		7. [Sampled Process Measurements](#sampled-process-measurements)
-		8. [Process Disturbances](#process-disturbances)
+  3. [`teprob.f`](#teprobf)
+  4. [`temain_mod.f`](#temainmodf)
+    5. [License](#license)
+    6. [Instructions for running the program](#instructions-for-running-the-program)
+  5. [`teprob.f`](#teprobf)
+    6. [Subroutines](#subroutines)
+	6. [Manipulated Variables](#manipulated-variables)
+	6. [Continuous Process Measurements](#continuous-process-measurements)
+	7. [Sampled Process Measurements](#sampled-process-measurements)
+	8. [Process Disturbances](#process-disturbances)
 
 # Author
 
