@@ -1,6 +1,4 @@
-# tennessee-eastman-profBraatz
-
-**Table of Contents**
+# Table of Contents
 
 1. [Author](#author)
 2. [Contents](#contents)
@@ -10,10 +8,10 @@
     6. [Instructions for running the program](#instructions-for-running-the-program)
   5. [`teprob.f`](#teprobf)
     6. [Subroutines](#subroutines)
-	6. [Manipulated Variables](#manipulated-variables)
-	6. [Continuous Process Measurements](#continuous-process-measurements)
-	7. [Sampled Process Measurements](#sampled-process-measurements)
-	8. [Process Disturbances](#process-disturbances)
+    6. [Manipulated Variables](#manipulated-variables)
+    6. [Continuous Process Measurements](#continuous-process-measurements)
+    7. [Sampled Process Measurements](#sampled-process-measurements)
+    8. [Process Disturbances](#process-disturbances)
 
 # Author
 
@@ -29,7 +27,7 @@
 
 # Contents
 
-This directory contains the Fortran 77 codes for the open-loop and the closed-loop simulations for the Tennessee Eastman process (TEP) as well as the training and testing data files used for evaluating the data-driven methods (PCA, PLS, FDA, and CVA).
+This directory contains the Fortran 77 codes for the open-loop and the closed-loop simulations for the Tennessee Eastman process (TEP) as well as the training and testing data files used for evaluating the data-driven methods (PCA, PLS, FDA, and CVA).  
 
 The descriptions of each file is shown below:
 
@@ -135,34 +133,34 @@ Users should cite the *modified code* using the following references:
 
 ### Instructions for running the program
 
-1. Go to line 220, change NPTS to the number of data points to simulate. For each minute of operation, 60 points are generated.
-2. Go to line 226, change SSPTS to the number of data points to simulate in steady state operation before implementing the disturbance.
-3. Go to line 367, implement any of the 21 programmed disturbances. For example, to implement disturbance 2, type `IDV(2)=1`.
+1. Go to line `220`, change `NPTS` to the number of data points to simulate. For each minute of operation, 60 points are generated.
+2. Go to line `226`, change `SSPTS` to the number of data points to simulate in steady state operation before implementing the disturbance.
+3. Go to line `367`, implement any of the 21 programmed disturbances. For example, to implement disturbance 2, type `IDV(2)=1`.
 4. The program will generate 15 output files and all data are recorded every 180 seconds, see Table 1 for details.
 
 	The default path is the home directory.	To change the file name and path, modify lines `346-360` accordingly.
     
 	To overwrite the files that already existed, change `STATUS='new'` to `STATUS='old'` from lines `346-360`.
 
-	Table 1: Content of the output files
+	**Table 1:** Content of the output files
 	
-	File Name | Content
-	--------- | -------
-	`TE_data_inc.dat` | Time (in seconds)
-	`TE_data_mv1.dat` | Measurements for manipulated variables 1 to 4
-	`TE_data_mv2.dat` | Measurements for manipulated variables 5 to 8
-	`TE_data_mv3.dat` | Measurements for manipulated variables 9 to 12
-	`TE_data_me01.dat` | Measurements for measurement variables 1 to 4
-	`TE_data_me02.dat` | Measurements for measurement variables 5 to 8
-	`TE_data_me03.dat` | Measurements for measurement variables 9 to 12
-	`TE_data_me04.dat` | Measurements for measurement variables 13 to 16
-	`TE_data_me05.dat` | Measurements for measurement variables 17 to 20
-	`TE_data_me06.dat` | Measurements for measurement variables 21 to 24
-	`TE_data_me07.dat` | Measurements for measurement variables 25 to 28
-	`TE_data_me08.dat` | Measurements for measurement variables 29 to 32
-	`TE_data_me09.dat` | Measurements for measurement variables 33 to 36
-	`TE_data_me10.dat` | Measurements for measurement variables 37 to 40
-	`TE_data_me11.dat` | Measurements for measurement variable 41
+    \#| File Name | Content
+    --| --------- | -------
+     1| `TE_data_inc.dat` | Time (in seconds)
+     2| `TE_data_mv1.dat` | Measurements for manipulated variables 1 to 4
+     3| `TE_data_mv2.dat` | Measurements for manipulated variables 5 to 8
+     4| `TE_data_mv3.dat` | Measurements for manipulated variables 9 to 12
+     5| `TE_data_me01.dat` | Measurements for measurement variables 1 to 4
+     6| `TE_data_me02.dat` | Measurements for measurement variables 5 to 8
+     7| `TE_data_me03.dat` | Measurements for measurement variables 9 to 12
+     8| `TE_data_me04.dat` | Measurements for measurement variables 13 to 16
+     9| `TE_data_me05.dat` | Measurements for measurement variables 17 to 20
+    10| `TE_data_me06.dat` | Measurements for measurement variables 21 to 24
+    11| `TE_data_me07.dat` | Measurements for measurement variables 25 to 28
+    12| `TE_data_me08.dat` | Measurements for measurement variables 29 to 32
+    13| `TE_data_me09.dat` | Measurements for measurement variables 33 to 36
+    14| `TE_data_me10.dat` | Measurements for measurement variables 37 to 40
+    15| `TE_data_me11.dat` | Measurements for measurement variable 41
 
 5. To ensure the randomness of the measurement noises, the random number `G` in the sub program (`teprob.f`, line 1187) has to be changed each time before running `temain_mod.f`.
 6. Save the changes in `temain_mod.f` and `teprob.f` and compile the program in unix by typing
@@ -198,7 +196,7 @@ Revised 4-4-91 to correct error in documentation of manipulated variables
 
 - `TEFUNC` - Function evaluator to be called by integrator
 - `TEINIT` - Initialization
-- `TESUBi` - Utility subroutines, i=1,2,..,8
+- `TESUBi` - Utility subroutines ($i = 1, 2, ..., 8$)
 
 The process simulation has 50 states (`NN=50`).
 
